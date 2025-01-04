@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultSection = document.getElementById("result-section");
     const pdfViewer = document.getElementById("pdfViewer");
     const downloadLink = document.getElementById("downloadLink");
+    const chooseMergeBtn = document.getElementById("chooseMergeBtn");
+
 
     let pdfFiles = [];
 
@@ -14,6 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
         pdfFiles = Array.from(event.target.files);
         mergeBtn.disabled = pdfFiles.length === 0;
     });
+
+    // Handle the choose merge button click
+    chooseMergeBtn.addEventListener("click", () => {
+        if (pdfFiles.length === 0) {
+            alert("Please upload at least two PDF files to merge.");
+            return;
+        }
+        mergeBtn.disabled = false;
+    });
+
+
+    
 
     mergeBtn.addEventListener("click", async () => {
         if (pdfFiles.length === 0) {
