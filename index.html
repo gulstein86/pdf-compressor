@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge and View PDFs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Merge and View PDFs Online</h1>
+        <p>Upload multiple PDF files, merge them, and view the result.</p>
+    </header>
+    <main>
+        <div id="upload-section">
+            <input type="file" id="pdfFiles" accept="application/pdf" multiple />
+            <button id="mergeBtn" disabled>Merge PDFs</button>
+        </div>
+        <div id="progress-section" style="display: none;">
+            <p>Merging... Please wait</p>
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+        <div id="result-section" style="display: none;">
+            <p>Merge Complete! View the merged PDF below:</p>
+            <iframe id="pdfViewer" style="width: 100%; height: 500px;" frameborder="0"></iframe>
+            <a id="downloadLink" class="btn" style="display: none;">Download Merged PDF</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Merge PDFs Online</p>
+    </footer>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
